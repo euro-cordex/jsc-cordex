@@ -1,6 +1,6 @@
 ﻿# How-To for jsc-cordex data exchange server for EURO-CORDEX-CMIP6 simulations
 
-Version: 2024-09-30
+Version: 2024-10-04
 
 Authors: k.goergen@fz-juelich.de, claas.teichmann@hereon.de
 
@@ -41,10 +41,10 @@ Centre (www.fz-juelich.de/ias/jsc/EN) as part of the JSC Cloud
 
 # Becoming a user of EURO-CORDEX-CMIP6 exchange server
 
-Each user needs a seperate account. No account sharing.
+Each user needs a separate account. No account sharing.
 
 jsc-cordex is also used by CORDEX FPSCONV and CORDEX FPS LUCAS. Projects are 
-seperate form each other via Linux groups and standard Linux filesystem 
+separate form each other via Linux groups and standard Linux filesystem 
 permissions.
 
 ## Option 1: You are an existing user of jsc-cordex
