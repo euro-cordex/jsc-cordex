@@ -12,9 +12,9 @@ a server called jsc-cordex at the Juelich Supercomputing Centre
 (https://www.fz-juelich.de/ias/jsc/EN/) at Forschungszentrum Juelich. The 
 server is meant to exchange CMORized simulation result subsets for community 
 analysis before the data is finally stored at ESGF data nodes. It may also 
-serve as a place where these analysis may be done to a certain extend.
+serve as a place where these analysis may be done to a certain extent.
 
-This document is accompagnied (in e-mail and on the server) with Privacy 
+This document is accompanied (in e-mail and on the server) with Privacy 
 Policy and a Terms of Use documents.
 
 > **IMPORTANT**  
@@ -23,7 +23,7 @@ Policy and a Terms of Use documents.
 
 > **PLEASE OBSERVE**
 > - This is an intermediate, temporary solution, not meant to store full
-CMORized simualtion output but selected variables needed for the initial 
+CMORized simulation output but selected variables needed for the initial 
 community papers.
 > - Disk space is limited
 
@@ -51,24 +51,24 @@ permissions.
 
 Users who have already an account on jsc-cordex (in the `esgf` or the `lucas` 
 group), and who want to have access to the CORDEX-CMIP6 data, just let 
-k.goergen@fz-juelich.de know via e-mail. I will add you to a seperate 
+k.goergen@fz-juelich.de know via e-mail. I will add you to a separate 
 `cdxcmip6` Linux group.
 
 ## Option 2: You are a new user of jsc-cordex, a user from your institution shall be added
 
 All new users need to send a public ssh key; someone from your institution has 
 to vouch for you. If this is a first time access, the point of contact of your
-institution needss to be a mamber of the EURO-CORDEX community.
+institution needs to be a member of the EURO-CORDEX community.
 
 Please send a public ssh key to k.goergen@fz-juelich.de, put the person who
 vouches in CC, informally agree to the Terms of Use and the Privacy Policy. 
-I'll forward to the jsc-cordex server sysadmins for account creation and inform 
+I'll forward the information to the jsc-cordex server sysadmins for account creation and inform 
 you once your account has been created and login is possible.
 
 To limit the admin effort, ideally there is one responsible user per institute 
 who already exists on the machine. 
 
-Example on how to generate a new ssh key pair key on the command line:
+Example on how to generate a new ssh key pair on the command line:
 ```
 ssh-keygen -a 256 -t ed25519  -C "$(hostname)-$(date +'%d-%m-%Y')" -f id_ed25519_FZJ_`date -I`
 ```
@@ -95,8 +95,8 @@ standards below to ensure an efficient operation.**
 > **IMPORTANT**
 > - No simulation or analysis data under `$HOME` (small quota)
 > - No software environment installation (e.g., Python `venv`) under `$HOME`
-> - Clean up after yourself, no excssive amount of "temp" files please.
-> - Best practice for file and dorectory names apply, no blanks or umlauts etc.
+> - Clean up after yourself, no excessive amount of "temp" files, please.
+> - Best practice for file and directory names apply, no blanks or umlauts etc.
 > - DO NOT CLUTTER our common data store
 > - Add READMEs where applicable
 > - If your needs are not covered here: Please ask k.goergen@fz-juelich.de
@@ -122,7 +122,7 @@ ${ROOTDIR_CDXCMIP6}/sim_data/CORDEX/CMIP6
 ## Processing and analysis results
 
 Any processing, analysis, visualisation and results thereof shall be done in
-temporary directories, on a per user basis (has proven to work to some extend
+temporary directories, on a per user basis (has proven to work to some extent
 with CORDEX FPSCONV on jsc-cordex):
 ```
 $ROOTDIR_CDXCMIP6/user_tmp/${USER}
@@ -148,7 +148,7 @@ $ROOTDIR_CDXCMIP6/software/<software_tool_name>
 
 # Permissions, co-existing data from different CORDEX initiatives
 
-Shared read and individual write-access, ownerhsip and provenance and 
+Shared read and individual write-access, ownership and provenance and 
 separation of the different CORDEX initiatives, which store data on jsc-cordex, 
 is via Linux group membership(s):
 
@@ -197,7 +197,7 @@ from tape
 
 # Formalisms
 
-There are two seperate documents with Terms of Use and Privacy Policy 
+There are two separate documents with Terms of Use and Privacy Policy 
 information that all users need to accept prior to being granted access to the 
 system or being added to the CORDEX-CMIP6 Linux group. These documents are 
 provided via e-mail and are stored in the `$ROOTDIR_CDXCMIP6`.
@@ -209,7 +209,7 @@ acknowledgement:
 
 *"The authors gratefully acknowledge the research data exchange infrastructure 
 and services provided by the Jülich Supercomputing Centre, Germany, as part of 
-the JSC CLoud."*
+the JSC Cloud and Helmholtz Data Federation initiatives."*
 
 # Timeline
 
