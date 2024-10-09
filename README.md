@@ -1,8 +1,9 @@
 ﻿# How-To for jsc-cordex data exchange server for EURO-CORDEX-CMIP6 simulations
 
-Version: 2024-10-04
+Version: 2024-10-06
 
-Authors: k.goergen@fz-juelich.de, claas.teichmann@hereon.de
+Authors/Revisions: k.goergen@fz-juelich.de, claas.teichmann@hereon.de, 
+Jesus.Fernandez@unican.es
 
 # Purpose of this document
 
@@ -41,11 +42,19 @@ Centre (www.fz-juelich.de/ias/jsc/EN) as part of the JSC Cloud
 
 # Becoming a user of EURO-CORDEX-CMIP6 exchange server
 
-Each user needs a separate account. No account sharing.
-
 jsc-cordex is also used by CORDEX FPSCONV and CORDEX FPS LUCAS. Projects are 
 separate form each other via Linux groups and standard Linux filesystem 
 permissions.
+
+Each user needs a separate account. No account sharing.
+
+You may have the role of (i) a "user" from an institution with an account, or 
+you may be (ii) a "user" and a point of contact ("POC") of an institution; 
+POCs may even do not have an account but they are usually long-term, well-known 
+CORDEX members.
+
+Per institution there can be multiple users, each user with a seperate account.
+Per institution there is always one POC only.
 
 ## Option 1: You are an existing user of jsc-cordex
 
@@ -56,17 +65,20 @@ k.goergen@fz-juelich.de know via e-mail. I will add you to a separate
 
 ## Option 2: You are a new user of jsc-cordex, a user from your institution shall be added
 
-All new users need to send a public ssh key; someone from your institution has 
-to vouch for you. If this is a first time access, the point of contact of your
-institution needs to be a member of the EURO-CORDEX community.
+All new users need to send a public ssh key; your institution's POC has 
+to vouch for you. 
 
-Please send a public ssh key to k.goergen@fz-juelich.de, put the person who
-vouches in CC, informally agree to the Terms of Use and the Privacy Policy. 
-I'll forward the information to the jsc-cordex server sysadmins for account creation and inform 
-you once your account has been created and login is possible.
+Please send a public ssh key to k.goergen@fz-juelich.de, put the institution 
+POC, person who vouches, in CC, informally agree to the Terms of Use and the 
+Privacy Policy. I'll forward the information to the jsc-cordex server sysadmins 
+for account creation and inform you once your account has been created and 
+login is possible.
 
-To limit the admin effort, ideally there is one responsible user per institute 
-who already exists on the machine. 
+(To limit the admin effort by creating as few new users as possible, ideally 
+there is one user per institution (e.g., the point of contact per institution or
+a user from this institution) who already exists on the jsc-cordex machine. But 
+if more users per institution are needed for different analyses etc., their 
+accounts can for sure be created.)
 
 Example on how to generate a new ssh key pair on the command line:
 ```
@@ -119,6 +131,13 @@ starting with the inevitable `<project_id>/<mip_era>` directories:
 ${ROOTDIR_CDXCMIP6}/sim_data/CORDEX/CMIP6
 ```
 
+If you provide `EUR-12` simulation results these should reside in the 
+respective directory tree below, starting with your `<institution_id>` (see
+the archive specifications document from above):
+```
+${ROOTDIR_CDXCMIP6}/sim_data/CORDEX/CMIP6/DD/EUR-12
+```
+
 ## Processing and analysis results
 
 Any processing, analysis, visualisation and results thereof shall be done in
@@ -157,10 +176,16 @@ is via Linux group membership(s):
 - `lucas` (CORDEX FPS LUCAS)
 
 > **ATTENTION**
-> - Check your `umask` setting, or set to `umask 0007`.
-> - Make sure others can access the respective shared simulation data 
+> - Check your `umask` setting, or set to `umask 0027` (`-rw-r-----` or 
+`drwxr-s---`).
+> - But make sure others can access the respective shared simulation data 
 directories you create as part of the CORDEX-CMIP6 archive protocol directory 
 trees.
+> - Make sure that only you as the owner of the uploaded simulation data have 
+write-permission.
+> - Within `sim_data/` (see above) a directory structure has been created which
+has write-.permisison for the group down to the `<domain_id>` of the ESGF 
+compliant directory structure.
 
 # Naming scheme
 
