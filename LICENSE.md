@@ -1,17 +1,21 @@
 ﻿# Terms of use jsc-cordex data exchange server for EURO-CORDEX-CMIP6 simulations
 
-Version: 2024-09-30
+Version: 2024-10-06
 
 ## (i) Conditions of access
 
 Access to the data is limited to persons contributing to EURO-CORDEX-CMIP6 
 either with analysis or model simulations or both. Each organization must have 
-a main contact person who is listed in some official simulation inventory. More 
-than one person from an institution may be granted access to the data but they 
-must be vouched for by the main contact; the main contact also informs the data 
-server point of contact if a person from the institution leaves, then the 
-account is erased and access privileges are transferred to the main contact. If 
-the main contact changes, reflected in the simulation inventory, the point of 
+a main point of contact person who is listed in some official simulation 
+inventory (e.g., here, if you provide simulations, 
+https://wcrp-cordex.github.io/simulation-status/CMIP6_downscaling_plans.html
+and / or here, if you provide simulations and / or analysis 
+https://docs.google.com/spreadsheets/d/1Pj3mcylRtvzWa1QA_CsuQvLqXwi8ctEV2a0jBTMZAbM/edit?gid=0#gid=0
+). More than one person from an institution may be granted access to the data 
+but they must be vouched for by the main point of contact; the main point of contact also informs 
+the data server point of contact if a person from the institution leaves, then 
+the account is erased and access privileges are transferred to the main contact. 
+If the main contact changes, reflected in the simulation inventory, the point of 
 contact for the jsc-cordex data server at Jülich Supercomputing Centre (JSC) 
 shall be informed (jsc-cordex POC: Klaus Goergen).
 
@@ -31,7 +35,7 @@ study but a maximum of two is recommended.
 If you use this data, please acknowledge also the storage service: 
 **"The authors gratefully acknowledge the research data exchange infrastructure 
 and services provided by the Jülich Supercomputing Centre, Germany, as part of 
-the JSC-Cloud and Helmholtz Data Federation initiatives."**
+the JSC Cloud."**
 
 ## (iii) Access to the joint storage
 
@@ -43,4 +47,5 @@ community by data exchange server at Jülich Supercomputing Centre JSC
 
 Storage on jsc-cordex is only temporary. The aim is for all simulation data to 
 be made available via the ESGF eventually. At such a time these Terms of Use 
-are replaced by the general CORDEX and ESGF Terms of Use.
+are replaced by the general CORDEX and ESGF Terms of Use, see here: 
+https://cordex.org/data-access/cordex-cmip6-data/cordex-cmip6-terms-of-use
