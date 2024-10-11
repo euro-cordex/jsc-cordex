@@ -2,18 +2,16 @@
 
 Version: 2024-10-11
 
-Authors/Revisions: k.goergen@fz-juelich.de, claas.teichmann@hereon.de, 
-Jesus.Fernandez@unican.es
+Authors/Revisions: k.goergen@fz-juelich.de, claas.teichmann@hereon.de, Jesus.Fernandez@unican.es, lars.buntemeyer@hereon.de
 
 # Purpose of this document
 
 Give an overview of the technical setup of and usage instructions for the 
 EURO-CORDEX-CMIP6 intermediate, temporary shared storage. Shared storage is on 
-a server called jsc-cordex at the Juelich Supercomputing Centre 
-(https://www.fz-juelich.de/ias/jsc/EN/) at Forschungszentrum Juelich. The 
-server is meant to exchange CMORized simulation result subsets for community 
-analysis before the data is finally stored at ESGF data nodes. It may also 
-serve as a place where these analysis may be done to a certain extent.
+a server called jsc-cordex at the [Juelich Supercomputing Centre](https://www.fz-juelich.de/ias/jsc/EN)
+at Forschungszentrum Juelich. The server is meant to exchange CMORized simulation 
+result subsets for community analysis before the data is finally stored at ESGF data nodes. 
+It may also serve as a place where these analysis may be done to a certain extent.
 
 This document is accompanied (in e-mail and on the server) with "Privacy 
 Policy" and a "Terms of Use" documents (`LICENSE.md` and `PRIVACY_STATEMENT.md`).
@@ -36,9 +34,8 @@ community papers.
 - IP: `134.94.199.142` 
 - Login: via ssh, with your personal account, using ssh key-based authentication
 
-The server, services, and storage are provided by the Juelich Supercomputing 
-Centre (www.fz-juelich.de/ias/jsc/EN) as part of the JSC Cloud 
-(https://www.fz-juelich.de/en/ias/jsc/systems/scientific-clouds/jsc-cloud).
+The server, services, and storage are provided by the [Juelich Supercomputing 
+Centre](www.fz-juelich.de/ias/jsc/EN) as part of the [JSC Cloud](https://www.fz-juelich.de/en/ias/jsc/systems/scientific-clouds/jsc-cloud).
 
 # Becoming a user of EURO-CORDEX-CMIP6 exchange server
 
@@ -125,7 +122,7 @@ export ROOTDIR_CDXCMIP6="/mnt/CORDEX_CMIP6_tmp"
 
 **Selected CMORized CORDEX-CMIP6 similation results are stored under their full 
 ESGF directory structure using DRS elements** as specified in the official 
-CORDEX-CMIP6 archive specifications (https://doi.org/10.5281/zenodo.10961069)
+[CORDEX-CMIP6 archive specifications](https://doi.org/10.5281/zenodo.10961069)
 starting with the inevitable `<project_id>/<mip_era>` directories:
 ```
 ${ROOTDIR_CDXCMIP6}/sim_data/CORDEX/CMIP6
