@@ -1,6 +1,6 @@
 ﻿# How-To for jsc-cordex data exchange server for EURO-CORDEX-CMIP6 simulations
 
-Version: 2024-10-06
+Version: 2024-10-11
 
 Authors/Revisions: k.goergen@fz-juelich.de, claas.teichmann@hereon.de, 
 Jesus.Fernandez@unican.es
@@ -15,8 +15,8 @@ server is meant to exchange CMORized simulation result subsets for community
 analysis before the data is finally stored at ESGF data nodes. It may also 
 serve as a place where these analysis may be done to a certain extent.
 
-This document is accompanied (in e-mail and on the server) with Privacy 
-Policy and a Terms of Use documents.
+This document is accompanied (in e-mail and on the server) with "Privacy 
+Policy" and a "Terms of Use" documents (`LICENSE.md` and `PRIVACY_STATEMENT.md`).
 
 > **IMPORTANT**  
 > - Pay attention to the "Directory structure" section
@@ -28,7 +28,7 @@ CMORized simulation output but selected variables needed for the initial
 community papers.
 > - Disk space is limited
 
-# Overview information, login and IP address etc.
+# Overview information on jsc-cordex, login and IP address etc.
 
 - Type: VM in an OpenStack cloud coumputing infrastructure 
 - OS: Ubuntu Linux
@@ -46,7 +46,7 @@ jsc-cordex is also used by CORDEX FPSCONV and CORDEX FPS LUCAS. Projects are
 separate form each other via Linux groups and standard Linux filesystem 
 permissions.
 
-Each user needs a separate account. No account sharing.
+Each user needs a separate account. **No account sharing, ever.**
 
 You may have the role of (i) a "user" from an institution with an account, or 
 you may be (ii) a "user" and a point of contact ("POC") of an institution; 
@@ -99,18 +99,18 @@ ssh -X -i <your_secret_ssh_key> <your_username>@jsc-cordex.fz-juelich.de
 Or `scp` or use any GUI-based client capable of logging in to SSH server from
 any operating system.
 
-# Directory structure, where to out your data, where to work
+# Directory structure, where to put your data, where to work
 
 **There is no data officer, every user is responsible to adhere to the 
 standards below to ensure an efficient operation.**
 
 > **IMPORTANT**
-> - No simulation or analysis data under `$HOME` (small quota)
-> - No software environment installation (e.g., Python `venv`) under `$HOME`
+> - No simulation or analysis data under `$HOME` (small quota).
+> - No software environment installation (e.g., Python `venv`) under `$HOME`.
 > - Clean up after yourself, no excessive amount of "temp" files, please.
 > - Best practice for file and directory names apply, no blanks or umlauts etc.
-> - DO NOT CLUTTER our common data store
-> - Add READMEs where applicable
+> - DO NOT CLUTTER our common data store.
+> - Add READMEs where applicable.
 > - If your needs are not covered here: Please ask k.goergen@fz-juelich.de
 
 ## root dir
@@ -176,8 +176,8 @@ is via Linux group membership(s):
 - `lucas` (CORDEX FPS LUCAS)
 
 > **ATTENTION**
-> - Check your `umask` setting, or set to `umask 0027` (`-rw-r-----` or 
-`drwxr-s---`).
+> - Check your `umask` setting, or set to `umask 0027` (results in `-rw-r-----` for files, and 
+in `drwxr-s---` for directories).
 > - But make sure others can access the respective shared simulation data 
 directories you create as part of the CORDEX-CMIP6 archive protocol directory 
 trees.
@@ -209,23 +209,24 @@ forward this to the sysadmins. Alternatively install by yourself under
 
 # Physical data storage, data security and integrity
 
-- Data is on a RAID filesystem
-- jsc-cordex storage is part of the JSC storage infrastructure
-- About 400TB storage is mounted to jsc-cordex
-- Less than 100TB is available for CORDEX-CMIP6 (as of 2024-09)
-- Tape backups are done regularly
+- Data is on a RAID filesystem.
+- jsc-cordex storage is part of the JSC storage infrastructure.
+- About 400TB storage is mounted to jsc-cordex.
+- Less than 100TB is available for CORDEX-CMIP6 (as of 2024-09).
+- Tape backups are done regularly.
 - Groups are strongly advised to additionally keep local copies of their data, 
-tools, analysis results at all times, there is no liability whatsoever by JSC
+tools, analysis results at all times, there is no liability whatsoever by JSC.
 - It is advised to use checksums to make sure data transfers went OK and to 
 allow for integrity checks in case of a system failure and later-on restaging 
-from tape
+from tape.
 
 # Formalisms
 
-There are two separate documents with Terms of Use and Privacy Policy 
-information that all users need to accept prior to being granted access to the 
-system or being added to the CORDEX-CMIP6 Linux group. These documents are 
-provided via e-mail and are stored in the `$ROOTDIR_CDXCMIP6`.
+There are two separate documents with "Terms of Use" (LICENSE) and "Privacy 
+Policy" (PRIVACY-STATEMENT) information that all users need to accept prior 
+to being granted access to the system or being added to the CORDEX-CMIP6 
+Linux group. These documents are provided via e-mail and are stored in the 
+`${ROOTDIR_CDXCMIP6}/READMEs` directory.
 
 # Acknowledgements
 
@@ -234,7 +235,7 @@ acknowledgement:
 
 *"The authors gratefully acknowledge the research data exchange infrastructure 
 and services provided by the Jülich Supercomputing Centre, Germany, as part of 
-the JSC Cloud and Helmholtz Data Federation initiatives."*
+the JSC Cloud."*
 
 # Timeline
 
