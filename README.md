@@ -160,6 +160,26 @@ Although jsc-cordex was set up to be a pure data exchange server for CORDEX FPSC
 
 Send an e-mail to k.goergen@fz-juelich.de if you are missing a software, I will forward this to the sysadmins. Alternatively install by yourself under `$ROOTDIR_CDXCMIP6/software/<software_tool_name>`.
 
+## Conda
+
+If you want to setup a conda environment, you can run `conda init` from the miniforge installation at `/mnt/CORDEX_CMIP6_tmp/software/miniforge3`, e.g., using
+```
+export PATH="/mnt/CORDEX_CMIP6_tmp/software/miniforge3/bin/:$PATH"
+conda init
+```
+To avoid cluttering your `HOME`, you should install environments in the `/mnt/CORDEX_CMIP6_tmp/user_tmp/<your user name>` directory. You can setup this in your `.condrac` in your `HOME` like this:
+```
+pkgs_dirs:
+  - /mnt/CORDEX_CMIP6_tmp/user_tmp/<user>/.conda/pks
+envs_dirs:
+  - /mnt/CORDEX_CMIP6_tmp/user_tmp/<user>/conda_envs
+channels:
+  - conda-forge
+auto_activate_base: false
+solver: libmamba
+default_threads: 16
+```
+
 # Physical data storage, data security and integrity
 
 - Data is on a RAID filesystem.
