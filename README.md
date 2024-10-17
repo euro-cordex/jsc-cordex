@@ -68,7 +68,17 @@ From the command line:
 ssh -X -i <your_secret_ssh_key> <your_username>@jsc-cordex.fz-juelich.de
 ```
 
-Or `scp` or use any GUI-based client capable of logging in to SSH server from any operating system.
+Or `scp` or use any GUI-based client capable of logging in to SSH server from any operating system. You might also want to configure your `.ssh/config` like this:
+```
+Host jsc-cordex
+User <your_username>
+Hostname jsc-cordex.fz-juelich.de
+IdentityFile ~/.ssh/<your_secret_ssh_key>
+```
+and login using
+```
+ssh jsc-cordex
+```
 
 # Directory structure, where to put your data, where to work
 
@@ -106,7 +116,7 @@ If you provide `EUR-12` simulation results these should reside in the respective
 ${ROOTDIR_CDXCMIP6}/sim_data/CORDEX/CMIP6/DD/EUR-12
 ```
 
-To synchronize your local data with `jsc-cordex`, you can use `rsync` on your institutions subfolder:
+To synchronize your local data with `jsc-cordex`, you can use `rsync` on your institution's subfolder:
 
 ```
 rsync -avz <local-path-to-cmor-output>/CORDEX/CMIP6/DD/EUR-12/<institution_id> jsc-cordex:/mnt/CORDEX_CMIP6_tmp/sim_data/CORDEX/CMIP6/DD/EUR-12
