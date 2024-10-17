@@ -106,6 +106,12 @@ If you provide `EUR-12` simulation results these should reside in the respective
 ${ROOTDIR_CDXCMIP6}/sim_data/CORDEX/CMIP6/DD/EUR-12
 ```
 
+To synchronize your local data with `jsc-cordex`, you can use `rsync` on your institutions subfolder:
+
+```
+rsync -avz <local-path-to-cmor-output>/CORDEX/CMIP6/DD/EUR-12/<institution_id> jsc-cordex:/mnt/CORDEX_CMIP6_tmp/sim_data/CORDEX/CMIP6/DD/EUR-12
+```
+
 ## Processing and analysis results
 
 Any processing, analysis, visualisation and results thereof shall be done in temporary directories, on a per user basis (has proven to work to some extent with CORDEX FPSCONV on jsc-cordex):
