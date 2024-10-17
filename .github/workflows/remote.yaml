@@ -1,0 +1,18 @@
+name: update catalog
+on: [workflow_dispatch]
+jobs:
+
+  build:
+    name: update catalog
+    runs-on: ubuntu-latest
+    steps:
+    - name: update catalog via ssh
+      uses: appleboy/ssh-action@v1.1.0
+      with:
+        command_timeout: 200m
+        host: ${{ secrets.SSH_HOST }}
+        username: ${{ secrets.SSH_USERNAME }}
+        key: ${{ secrets.SSH_PRIVATE_KEY }}
+        script: |
+          whoami
+        
