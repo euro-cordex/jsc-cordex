@@ -16,5 +16,7 @@ jobs:
         script: |
           git clone git@github.com:euro-cordex/joint-evaluation.git /mnt/CORDEX_CMIP6_tmp/user_tmp/$USER/joint-evaluation
           cd /mnt/CORDEX_CMIP6_tmp/user_tmp/$USER/joint-evaluation
-          bash ci/create-evn.sh
+          ls
+          bash ci/create-env.sh
+          which python
         
