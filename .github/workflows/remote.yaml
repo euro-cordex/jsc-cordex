@@ -14,9 +14,10 @@ jobs:
         username: ${{ secrets.SSH_USERNAME }}
         key: ${{ secrets.SSH_PRIVATE_KEY }}
         script: |
+          source /mnt/CORDEX_CMIP6_tmp/software/miniforge3/etc/profile.d/conda.sh
           git clone git@github.com:euro-cordex/joint-evaluation.git /mnt/CORDEX_CMIP6_tmp/user_tmp/$USER/joint-evaluation
           cd /mnt/CORDEX_CMIP6_tmp/user_tmp/$USER/joint-evaluation
           ls
           bash ci/create-env.sh
-          conda activate catalog-update
-          python code/catalog/catalog.py
+          # bash ci/update-catalog.sh
+          rm -rf /mnt/CORDEX_CMIP6_tmp/user_tmp/$USER/joint-evaluation
