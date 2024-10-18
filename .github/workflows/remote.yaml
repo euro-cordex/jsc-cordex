@@ -18,5 +18,5 @@ jobs:
           cd /mnt/CORDEX_CMIP6_tmp/user_tmp/$USER/joint-evaluation
           ls
           bash ci/create-env.sh
-          which python
-        
+          conda activate catalog-update
+          python code/catalog/catalog.py
