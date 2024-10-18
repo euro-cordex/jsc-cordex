@@ -19,5 +19,5 @@ jobs:
           cd /mnt/CORDEX_CMIP6_tmp/user_tmp/$USER/joint-evaluation
           ls
           bash ci/create-env.sh
-          # bash ci/update-catalog.sh
+          bash ci/update-catalog.sh
           rm -rf /mnt/CORDEX_CMIP6_tmp/user_tmp/$USER/joint-evaluation
