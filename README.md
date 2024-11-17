@@ -10,11 +10,9 @@ Give an overview of the technical setup of and usage instructions for the EURO-C
 
 This document is accompanied (in e-mail and on the server) with "Privacy Policy" and a "Terms of Use" documents (`LICENSE.md` and `PRIVACY_STATEMENT.md`).
 
-> **IMPORTANT**  
+> [!IMPORTANT]
 > - Pay attention to the "Directory structure" section
 > - Pay attention to the backup information
-
-> **PLEASE OBSERVE**
 > - This is an intermediate, temporary solution, not meant to store full
 CMORized simulation output but selected variables needed for the initial 
 community papers.
@@ -75,7 +73,7 @@ Or `scp` or use any GUI-based client capable of logging in to SSH server from an
 **There is no data officer, every user is responsible to adhere to the 
 standards below to ensure an efficient operation.**
 
-> **IMPORTANT**
+> [!IMPORTANT]
 > - No simulation or analysis data under `$HOME` (small quota).
 > - No software environment installation (e.g., Python `venv`) under `$HOME`.
 > - Clean up after yourself, no excessive amount of "temp" files, please.
@@ -138,7 +136,7 @@ Shared read and individual write-access, ownership and provenance and separation
 - `esgf` (CORDEX FPSCONV) 
 - `lucas` (CORDEX FPS LUCAS)
 
-> **ATTENTION**
+> [!IMPORTANT]
 > - Check your `umask` setting, or set to `umask 0027` (results in `-rw-r-----` for files, and in `drwxr-s---` for directories).
 > - But make sure others can access the respective shared simulation data directories you create as part of the CORDEX-CMIP6 archive protocol directory trees.
 > - Make sure that only you as the owner of the uploaded simulation data have write-permission.
