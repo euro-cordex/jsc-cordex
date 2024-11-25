@@ -17,7 +17,7 @@ jobs:
         key: ${{ secrets.SSH_PRIVATE_KEY }}
         script: |
           source /mnt/CORDEX_CMIP6_tmp/software/miniforge3/etc/profile.d/conda.sh
-          git clone git@github.com:euro-cordex/joint-evaluation.git@jupyterbook /mnt/CORDEX_CMIP6_tmp/user_tmp/$USER/joint-evaluation
+          git clone --branch jupyterbook git@github.com:euro-cordex/joint-evaluation.git /mnt/CORDEX_CMIP6_tmp/user_tmp/$USER/joint-evaluation
           cd /mnt/CORDEX_CMIP6_tmp/user_tmp/$USER/joint-evaluation
           ls
           bash ci/create-env.sh eval-book/environment.yml
