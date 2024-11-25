@@ -20,6 +20,6 @@ jobs:
           git clone --branch jupyterbook git@github.com:euro-cordex/joint-evaluation.git /mnt/CORDEX_CMIP6_tmp/user_tmp/$USER/joint-evaluation
           cd /mnt/CORDEX_CMIP6_tmp/user_tmp/$USER/joint-evaluation
           ls
-          bash ci/create-env.sh eval-book/environment.yml
+          bash ci/create-env.sh eval-book/environment.yml eval-book
           
           rm -rf /mnt/CORDEX_CMIP6_tmp/user_tmp/$USER/joint-evaluation
