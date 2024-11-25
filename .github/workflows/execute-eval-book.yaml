@@ -1,0 +1,25 @@
+name: update jsc-cordex data catalog
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 0 * * *"
+jobs:
+  build:
+    name: update catalog
+    runs-on: ubuntu-latest
+    steps:
+    - name: update catalog via ssh
+      uses: appleboy/ssh-action@v1.1.0
+      with:
+        command_timeout: 200m
+        host: ${{ secrets.SSH_HOST }}
+        username: ${{ secrets.SSH_USERNAME }}
+        key: ${{ secrets.SSH_PRIVATE_KEY }}
+        script: |
+          source /mnt/CORDEX_CMIP6_tmp/software/miniforge3/etc/profile.d/conda.sh
+          git clone git@github.com:euro-cordex/joint-evaluation.git /mnt/CORDEX_CMIP6_tmp/user_tmp/$USER/joint-evaluation
+          cd /mnt/CORDEX_CMIP6_tmp/user_tmp/$USER/joint-evaluation
+          ls
+          bash ci/create-env.sh eval-book/environment.yml
+          
+          rm -rf /mnt/CORDEX_CMIP6_tmp/user_tmp/$USER/joint-evaluation
