@@ -1,11 +1,11 @@
-name: update jsc-cordex data catalog
+name: execute eval book
 on:
   workflow_dispatch:
   schedule:
     - cron: "0 0 * * *"
 jobs:
   build:
-    name: update catalog
+    name: run jupyterbook
     runs-on: ubuntu-latest
     steps:
     - name: update catalog via ssh
