@@ -1,6 +1,6 @@
 ﻿# How-To for jsc-cordex data exchange server for EURO-CORDEX-CMIP6 simulations
 
-Version: 2024-10-14
+Version: See latest commit.
 
 Authors/Revisions: k.goergen@fz-juelich.de, claas.teichmann@hereon.de, Jesus.Fernandez@unican.es, lars.buntemeyer@hereon.de
 
