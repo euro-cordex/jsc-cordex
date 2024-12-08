@@ -20,7 +20,7 @@ jobs:
           git clone git@github.com:euro-cordex/joint-evaluation.git /mnt/CORDEX_CMIP6_tmp/user_tmp/$USER/joint-evaluation
           cd /mnt/CORDEX_CMIP6_tmp/user_tmp/$USER/joint-evaluation
           ls
-          bash ci/create-env.sh code/environment.yaml catalog-update
+          bash ci/create-env.sh code/environment.yaml jsc-cordex-remote
           bash ci/update-catalog.sh
           rm -rf /mnt/CORDEX_CMIP6_tmp/user_tmp/$USER/joint-evaluation
   plots:
@@ -40,7 +40,22 @@ jobs:
           git clone git@github.com:euro-cordex/joint-evaluation.git /mnt/CORDEX_CMIP6_tmp/user_tmp/$USER/joint-evaluation
           cd /mnt/CORDEX_CMIP6_tmp/user_tmp/$USER/joint-evaluation
           ls
-          conda activate catalog-update
-          #bash ci/create-env.sh code/environment.yaml jsc-cordex-analysis
+          conda activate jsc-cordex-remote
+          
+          #bash ci/create-env.sh code/environment.yaml jsc-cordex-remote
           python code/timeseries.py
+          
+          # Check if catalog.csv has changed
+          git diff --quiet plots/*
+          changed=$?
+          
+          if [ $changed -ne 0 ]; then
+            echo "committing updates plots!"
+            git add catalog.csv catalog.xlsx
+            git commit --author="github-actions[bot] <github-actions[bot]@users.noreply.github.com>" -m "catalog update"
+            git push origin main
+          else
+            echo "no change!"
+          fi
+
           rm -rf /mnt/CORDEX_CMIP6_tmp/user_tmp/$USER/joint-evaluation
