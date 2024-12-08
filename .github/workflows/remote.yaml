@@ -1,10 +1,10 @@
-name: update jsc-cordex data catalog
+name: nighlty update
 on:
   workflow_dispatch:
   schedule:
     - cron: "0 0 * * *"
 jobs:
-  build:
+  catalog:
     name: update catalog
     runs-on: ubuntu-latest
     steps:
@@ -22,4 +22,25 @@ jobs:
           ls
           bash ci/create-env.sh code/environment.yaml catalog-update
           bash ci/update-catalog.sh
+          rm -rf /mnt/CORDEX_CMIP6_tmp/user_tmp/$USER/joint-evaluation
+  plots:
+    name: update plots
+    needs: catalog
+    runs-on: ubuntu-latest
+    steps:
+    - name: update catalog via ssh
+      uses: appleboy/ssh-action@v1.1.0
+      with:
+        command_timeout: 200m
+        host: ${{ secrets.SSH_HOST }}
+        username: ${{ secrets.SSH_USERNAME }}
+        key: ${{ secrets.SSH_PRIVATE_KEY }}
+        script: |
+          source /mnt/CORDEX_CMIP6_tmp/software/miniforge3/etc/profile.d/conda.sh
+          git clone git@github.com:euro-cordex/joint-evaluation.git /mnt/CORDEX_CMIP6_tmp/user_tmp/$USER/joint-evaluation
+          cd /mnt/CORDEX_CMIP6_tmp/user_tmp/$USER/joint-evaluation
+          ls
+          conda activate jsc-cordex-remote
+          bash ci/create-env.sh code/environment.yaml jsc-cordex-analysis
+          #bash ci/update-catalog.sh
           rm -rf /mnt/CORDEX_CMIP6_tmp/user_tmp/$USER/joint-evaluation
