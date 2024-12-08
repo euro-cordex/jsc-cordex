@@ -1,4 +1,4 @@
-name: nighlty update
+name: nightly update
 on:
   workflow_dispatch:
   schedule:
