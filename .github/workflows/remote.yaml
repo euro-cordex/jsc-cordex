@@ -51,8 +51,8 @@ jobs:
           
           if [ $changed -ne 0 ]; then
             echo "committing updates plots!"
-            git add catalog.csv catalog.xlsx
-            git commit --author="github-actions[bot] <github-actions[bot]@users.noreply.github.com>" -m "catalog update"
+            git add plots/*
+            git commit --author="github-actions[bot] <github-actions[bot]@users.noreply.github.com>" -m "plot update"
             git push origin main
           else
             echo "no change!"
