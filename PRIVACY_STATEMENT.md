@@ -1,4 +1,4 @@
-﻿# Privacy policy of jsc-cordex data exchange server for EURO-CORDEX-CMIP6 simulations
+﻿# Privacy Statement of jsc-cordex data exchange server for EURO-CORDEX-CMIP6 simulations
 
 Version: 2024-09-30
 
