@@ -105,19 +105,19 @@ export ROOTDIR_CDXCMIP6="/mnt/CORDEX_CMIP6_tmp"
 **Selected CMORized CORDEX-CMIP6 similation results are stored under their full ESGF directory structure using DRS elements** as specified in the official [CORDEX-CMIP6 archive specifications](https://doi.org/10.5281/zenodo.10961069) starting with the inevitable `<project_id>/<mip_era>` directories:
 
 ```
-${ROOTDIR_CDXCMIP6}/sim_data/CORDEX/CMIP6
+${ROOTDIR_CDXCMIP6}/sim_data/CORDEX-CMIP6
 ```
 
 If you provide `EUR-12` simulation results these should reside in the respective directory tree below, starting with your `<institution_id>` (see the archive specifications document from above):
 
 ```
-${ROOTDIR_CDXCMIP6}/sim_data/CORDEX/CMIP6/DD/EUR-12
+${ROOTDIR_CDXCMIP6}/sim_data/CORDEX-CMIP6/DD/EUR-12
 ```
 
 To synchronize your local data with `jsc-cordex`, you can use `rsync` on your institution's subfolder:
 
 ```
-rsync -avz <local-path-to-cmor-output>/CORDEX/CMIP6/DD/EUR-12/<institution_id> jsc-cordex:/mnt/CORDEX_CMIP6_tmp/sim_data/CORDEX/CMIP6/DD/EUR-12
+rsync -avz <local-path-to-cmor-output>/CORDEX-CMIP6/DD/EUR-12/<institution_id> jsc-cordex:/mnt/CORDEX_CMIP6_tmp/sim_data/CORDEX-CMIP6/DD/EUR-12
 ```
 
 ## Processing and analysis results
