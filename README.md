@@ -209,7 +209,7 @@ If you connect to `jsc-cordex` [remotely](https://code.visualstudio.com/docs/rem
 > Replace `<username>` with your actual system username explicitly.
 
 You can open your `settings.json` from:
-- Command Palette → **Preferences: Open Settings (JSON)**
+- Command Palette → **Preferences: Open User Settings (JSON)**
 - or edit `~/.config/Code/User/settings.json` directly.
 
 # Physical data storage, data security and integrity
@@ -241,4 +241,5 @@ jsc-cordex is meant as a temporary, intermediate joint storage and analysis syst
 # Point of contact for jsc-cordex
 
 Klaus GOERGEN, k.goergen@fz-juelich.de
+
 
