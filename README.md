@@ -194,6 +194,24 @@ solver: libmamba
 default_threads: 16
 ```
 
+## VS Code
+### VS Code Remote Server Cache Location
+
+If you connect to `jsc-cordex` [remotely](https://code.visualstudio.com/docs/remote/remote-overview) via SSH, the `.vscode-server` cache can grow in size quickly. By default, this cache is stored in your `$HOME` directory, which can fill up fast. To avoid that, you can change the install location of the VS Code Server by adding the following to your user `settings.json`:
+
+```json
+"remote.SSH.serverInstallPath": {
+    "jsc-cordex": "/mnt/CORDEX_CMIP6_tmp/user_tmp/<username>"
+}
+```
+> [!IMPORTANT]
+> Environment variables (like `$USER` or `$USERID`) are **not supported** in this setting.  
+> Replace `<username>` with your actual system username explicitly.
+
+You can open your `settings.json` from:
+- Command Palette → **Preferences: Open User Settings (JSON)**
+- or edit `~/.config/Code/User/settings.json` directly.
+
 # Physical data storage, data security and integrity
 
 - Data is on a RAID filesystem.
@@ -223,3 +241,5 @@ jsc-cordex is meant as a temporary, intermediate joint storage and analysis syst
 # Point of contact for jsc-cordex
 
 Klaus GOERGEN, k.goergen@fz-juelich.de
+
+
